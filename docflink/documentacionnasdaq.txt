@@ -1,0 +1,5 @@
+https://www.nasdaq.com/market-activity/stocks/screener
+
+aqui se baja el csv
+
+http://api.marketstack.com/v1/eod?access_key=87ff34899cc0f6604e3f70b43ee7424a&symbols=AAPL

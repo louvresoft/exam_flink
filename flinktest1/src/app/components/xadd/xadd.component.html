@@ -1,0 +1,68 @@
+<!-- Title group  -->
+<div class="title-group">
+    <h1 class="mat-h1">Agregar Item</h1>
+    <mat-divider fxFlex="1 0"></mat-divider>
+</div>
+<br>
+  
+  <div class="container">
+    <form [formGroup]="enterpriseForm"  (submit)="submit()">
+      <div class="row">
+          <div class="col-md-4">
+
+              <div class="controlers-wrapper">
+                <!-- Name -->
+                <mat-form-field class="example-full-width" appearance="fill" >
+                  <mat-label>Empresa</mat-label>
+                  <input matInput placeholder="Nombre de la Empresa" formControlName="name_enterprise">
+                  <!-- <mat-error *ngIf="enterpriseForm.get('name_enterprise')?.invalid">Campo obligatorio</mat-error> -->
+                  <mat-error *ngIf="enterpriseForm.get('name_enterprise')?.hasError('required')">Campo obligatorio</mat-error>
+                  <!-- <mat-error *ngIf="enterpriseForm.get('name_enterprise')?.hasError('minlength')">Minima longitud 3 caracteres</mat-error> -->
+                  <mat-error *ngIf="enterpriseForm.get('name_enterprise')?.hasError('maxlength')">Maxima longitud 50 caracteres</mat-error>
+                  
+                </mat-form-field>
+        
+                <!-- Email -->
+                <mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>Descripción</mat-label>
+                  <input matInput placeholder="Descripción" formControlName="description">
+                  <mat-error *ngIf="enterpriseForm.get('description')?.hasError('maxlength')">Maxima longitud 100 caracteres</mat-error>
+                  <!-- <mat-error *ngIf="handleError('student_email', 'required')">
+                    You must provide a<strong>student email</strong>
+                  </mat-error> -->
+                </mat-form-field>
+              </div>
+
+          </div>
+          <div class="col-md-4">
+              <div class="controlers-wrapper">
+                <mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>Simbolo</mat-label>
+                  <input matInput placeholder="Simbolo" formControlName="symbol">
+                  <mat-error *ngIf="enterpriseForm.get('symbol')?.hasError('maxlength')">Maxima longitud 10 caracteres</mat-error>
+                  <mat-error *ngIf="enterpriseForm.get('symbol')?.hasError('symbol')">Symbolo invalido</mat-error>
+                    <!-- <mat-error *ngIf="handleError('student_email', 'required')">
+                      You must provide a<strong>student email</strong>
+                    </mat-error> -->
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>Market value</mat-label>
+                  <input matInput placeholder="Market value" formControlName="market_value">
+                    <!-- <mat-error *ngIf="handleError('student_email', 'required')">
+                      You must provide a<strong>student email</strong>
+                    </mat-error> -->
+                </mat-form-field>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-md-7">
+        </div>
+        <div class="col-md-2">
+          <button mat-flat-button color="primary" type="submit">Guardar</button>
+        </div>
+        <div class="col-md-3"></div>
+      </div>
+    </form>  
+  </div>

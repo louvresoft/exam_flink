@@ -1,0 +1,17 @@
+<mat-form-field appearance="fill">
+  <mat-label>Lista de Simbolos</mat-label>
+  <mat-select  (selectionChange)="optionsMethod($event.value, symbols)">
+    <mat-option *ngFor="let sbl of symbols" [value]="sbl.symbol">
+      {{sbl.symbol}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<div class="container sample">
+    <!-- <div class="options vertical" >
+        <label id="legendTitle">Stock Changes: Microsoft vs Google </label>
+    </div> -->
+    <igx-financial-chart height="600px" width="100%"
+    [dataSource]="data">
+    </igx-financial-chart>
+</div>
